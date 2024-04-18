@@ -1,20 +1,23 @@
 <?php
 
 require_once __DIR__ . '/Models/Production.php';
+require_once __DIR__ . '/Models/Genre.php';
 
 
 // Istanziate poi almeno due oggetti Production 
 
-$batman = new Production('Batman', 'it', 10);
-$matrix = new Production('Matrix', 'en', 9);
+$batman = new Production('Batman', 'it', 10, new Genre('Action'));
+$matrix = new Production('Matrix', 'en', 9, new Genre('Fantasy'));
 
 
 
 
 // stampate a schermo i loro valori.
-// var_dump($batman, $matrix);
+var_dump($batman, $matrix);
 
 //echo $batman->greetings();
+
+
 
 
 
@@ -44,6 +47,7 @@ $matrix = new Production('Matrix', 'en', 9);
 						<h3>Titolo: <?= $matrix->title ?></h3>
 						<h4>Lingua: <?= $matrix->language ?></h4>
 						<h4>Voto: <?= $matrix->vote ?></h4>
+						<h4>Genere: <?= $matrix->genre->genre ?></h4>
 						<p><?= $matrix->greetings() ?></p>
 					</div>
 				</div>
@@ -52,6 +56,7 @@ $matrix = new Production('Matrix', 'en', 9);
 						<h3>Titolo: <?= $batman->title ?></h3>
 						<h4>Lingua: <?= $batman->language ?></h4>
 						<h4>Voto: <?= $batman->vote ?></h4>
+						<h4>Genere: <?= $batman->genre->genre ?></h4>
 						<p><?= $batman->greetings() ?></p>
 
 					</div>
