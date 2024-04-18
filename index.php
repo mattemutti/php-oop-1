@@ -1,31 +1,14 @@
 <?php
 
-//create un file index.php in cui è definita una classe Production
-class Production
-{
-	//- All'interno della classe dovrete gestire:- un titolo, - una lingua e - un voto (su una scala da 1 a 10). 
-	public $title;
-	public $language;
-	public $vote;
+require_once __DIR__ . '/Models/Production.php';
 
-
-	public function __construct(string $title, string $language, int $vote)
-	{
-		$this->title = $title;
-		$this->language = $language;
-		$this->vote = $vote;
-	}
-
-	public function greetings()
-	{
-		return $this->title . ' The film';
-	}
-}
 
 // Istanziate poi almeno due oggetti Production 
 
 $batman = new Production('Batman', 'it', 10);
 $matrix = new Production('Matrix', 'en', 9);
+
+
 
 
 // stampate a schermo i loro valori.
