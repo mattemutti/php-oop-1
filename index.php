@@ -6,14 +6,14 @@ require_once __DIR__ . '/Models/Genre.php';
 
 // Istanziate poi almeno due oggetti Production 
 
-$batman = new Production('Batman', 'it', 10, new Genre('Action'));
-$matrix = new Production('Matrix', 'en', 9, new Genre('Fantasy'));
+$batman = new Production('Batman', 'it', 10, new Genre('Action', 'Action movie'));
+$matrix = new Production('Matrix', 'en', 9, new Genre('Fantasy', ' Fantasy movie'));
 
 
 
 
 // stampate a schermo i loro valori.
-var_dump($batman, $matrix);
+//var_dump($batman, $matrix);
 
 //echo $batman->greetings();
 
@@ -45,18 +45,20 @@ var_dump($batman, $matrix);
 				<div class="col-4">
 					<div class="card text-center">
 						<h3>Titolo: <?= $matrix->title ?></h3>
-						<h4>Lingua: <?= $matrix->language ?></h4>
-						<h4>Voto: <?= $matrix->vote ?></h4>
-						<h4>Genere: <?= $matrix->genre->genre ?></h4>
+						<h5>Lingua: <?= $matrix->language ?></h5>
+						<h5>Voto: <?= $matrix->vote ?></h5>
+						<h4>Genere: <?= $matrix->genre->title ?></h4>
+						<h6>Descrizione Genere: <?= $matrix->genre->description ?></h6>
 						<p><?= $matrix->greetings() ?></p>
 					</div>
 				</div>
 				<div class="col-4">
 					<div class="card text-center">
 						<h3>Titolo: <?= $batman->title ?></h3>
-						<h4>Lingua: <?= $batman->language ?></h4>
-						<h4>Voto: <?= $batman->vote ?></h4>
-						<h4>Genere: <?= $batman->genre->genre ?></h4>
+						<h5>Lingua: <?= $batman->language ?></h5>
+						<h5>Voto: <?= $batman->vote ?></h5>
+						<h4>Genere: <?= $batman->genre->title ?></h4>
+						<h6>Descrizione Genere: <?= $batman->genre->description ?></h6>
 						<p><?= $batman->greetings() ?></p>
 
 					</div>
