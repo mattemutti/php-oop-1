@@ -11,4 +11,20 @@ class Genre
 		$this->description = $description;
 
 	}
+
+
+	//getters - restituiscono
+
+	public function getGenreTitle()
+	{
+		return $this->title;
+	}
+
+	public function getGenreDescription()
+	{
+		return $this->description;
+	}
+
+
+
 }

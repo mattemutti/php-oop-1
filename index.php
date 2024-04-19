@@ -16,7 +16,6 @@ $movies = [
 
 
 
-
 ?>
 
 <!doctype html>
@@ -35,15 +34,15 @@ $movies = [
 	<div id='app'>
 
 		<div class="container my-4">
-			<div class="row">
+			<div class="row justify-content-center text-center">
 				<?php foreach ($movies as $movie): ?>
 					<div class="col-4">
 						<div class="card text-center">
 							<h3>Titolo: <?= $movie->title ?></h3>
 							<h5>Lingua: <?= $movie->language ?></h5>
 							<h5>Voto: <?= $movie->vote ?></h5>
-							<h4>Genere: <?= $movie->genre->title ?></h4>
-							<h6>Descrizione Genere: <?= $movie->genre->description ?></h6>
+							<h4>Genere: <?= $movie->genre->getGenreTitle() ?></h4>
+							<h6>Descrizione Genere: <?= $movie->genre->getGenreDescription() ?></h6>
 							<p><?= $movie->greetings() ?></p>
 						</div>
 					</div>
