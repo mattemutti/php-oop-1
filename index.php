@@ -4,18 +4,13 @@ require_once __DIR__ . '/Models/Production.php';
 require_once __DIR__ . '/Models/Genre.php';
 
 
-// Istanziate poi almeno due oggetti Production 
 
-$batman = new Production('Batman', 'it', 10, new Genre('Action', 'Action movie'));
-$matrix = new Production('Matrix', 'en', 9, new Genre('Fantasy', ' Fantasy movie'));
+$movies = [
 
+	$batman = new Production('Batman', 'it', 10, new Genre('Action', 'Action movie')),
+	$matrix = new Production('Matrix', 'en', 9, new Genre('Fantasy', ' Fantasy movie')),
+];
 
-
-
-// stampate a schermo i loro valori.
-//var_dump($batman, $matrix);
-
-//echo $batman->greetings();
 
 
 
@@ -39,30 +34,20 @@ $matrix = new Production('Matrix', 'en', 9, new Genre('Fantasy', ' Fantasy movie
 <body>
 	<div id='app'>
 
-		<div class="container my-4
-		">
+		<div class="container my-4">
 			<div class="row">
-				<div class="col-4">
-					<div class="card text-center">
-						<h3>Titolo: <?= $matrix->title ?></h3>
-						<h5>Lingua: <?= $matrix->language ?></h5>
-						<h5>Voto: <?= $matrix->vote ?></h5>
-						<h4>Genere: <?= $matrix->genre->title ?></h4>
-						<h6>Descrizione Genere: <?= $matrix->genre->description ?></h6>
-						<p><?= $matrix->greetings() ?></p>
+				<?php foreach ($movies as $movie): ?>
+					<div class="col-4">
+						<div class="card text-center">
+							<h3>Titolo: <?= $movie->title ?></h3>
+							<h5>Lingua: <?= $movie->language ?></h5>
+							<h5>Voto: <?= $movie->vote ?></h5>
+							<h4>Genere: <?= $movie->genre->title ?></h4>
+							<h6>Descrizione Genere: <?= $movie->genre->description ?></h6>
+							<p><?= $movie->greetings() ?></p>
+						</div>
 					</div>
-				</div>
-				<div class="col-4">
-					<div class="card text-center">
-						<h3>Titolo: <?= $batman->title ?></h3>
-						<h5>Lingua: <?= $batman->language ?></h5>
-						<h5>Voto: <?= $batman->vote ?></h5>
-						<h4>Genere: <?= $batman->genre->title ?></h4>
-						<h6>Descrizione Genere: <?= $batman->genre->description ?></h6>
-						<p><?= $batman->greetings() ?></p>
-
-					</div>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 
