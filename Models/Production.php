@@ -1,5 +1,6 @@
 <?php
 
+
 class Production
 {
 	//- All'interno della classe dovrete gestire:- un titolo, - una lingua e - un voto (su una scala da 1 a 10). 

@@ -1,17 +1,12 @@
 <?php
 
-require_once __DIR__ . '/Models/Production.php';
-require_once __DIR__ . '/Models/Genre.php';
+require __DIR__ . '/Models/Production.php';
+require __DIR__ . '/Models/Genre.php';
+require __DIR__ . '/Models/Movie.php';
+require __DIR__ . '/Models/TVSerie.php';
+require __DIR__ . '/database/db.php';
 
-
-
-$movies = [
-
-	$batman = new Production('Batman', 'it', 10, new Genre('Action', 'Action movie')),
-	$matrix = new Production('Matrix', 'en', 9, new Genre('Fantasy', ' Fantasy movie')),
-];
-
-
+var_dump($movies);
 
 
 
