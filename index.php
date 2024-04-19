@@ -6,9 +6,8 @@ require __DIR__ . '/Models/Movie.php';
 require __DIR__ . '/Models/TVSerie.php';
 require __DIR__ . '/database/db.php';
 
-var_dump($movies);
-
-
+//var_dump($movies);
+//var_dump($donnieDarko->title);
 
 
 ?>
@@ -29,16 +28,25 @@ var_dump($movies);
 	<div id='app'>
 
 		<div class="container my-4">
-			<div class="row justify-content-center text-center">
+			<div class="row justify-content-center text-center g-4">
 				<?php foreach ($movies as $movie): ?>
 					<div class="col-4">
-						<div class="card text-center">
+						<div class="card text-center p-2">
 							<h3>Titolo: <?= $movie->title ?></h3>
-							<h5>Lingua: <?= $movie->language ?></h5>
-							<h5>Voto: <?= $movie->vote ?></h5>
-							<h4>Genere: <?= $movie->genre->getGenreTitle() ?></h4>
-							<h6>Descrizione Genere: <?= $movie->genre->getGenreDescription() ?></h6>
-							<p><?= $movie->greetings() ?></p>
+							<div>Lingua: <?= $movie->language ?></div>
+							<div>Voto: <?= $movie->vote ?></div>
+							<div>Genere: <?= $movie->genre?->getGenreTitle() ?></div>
+							<div>Descrizione Genere: <?= $movie->genre?->getGenreDescription() ?></div>
+							<div>
+								<?php if (isset($movie->profit)): ?>
+									<div>Profitti: <?= $movie->profit ?> </div>
+									<div>Durata: <?= $movie->duration ?></div>
+								<?php endif; ?>
+								<?php if (isset($movie->season)): ?>
+									<div>Season <?= $movie->season ?> </div>
+								<?php endif; ?>
+
+							</div>
 						</div>
 					</div>
 				<?php endforeach; ?>
